@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      ★★ 这个文件【故意是空的】。而且这一点很重要 ——
+
+      因为 style 和 color 的合并规则【不一样】：
+
+        · color 是【按名字合并】的
+          → values-night/colors.xml 里没写的，自动回落 values/
+          → 写了的，按名字覆盖
+
+        · style 是【整体替换】的
+          → values-night/ 里只要有同名的 Base.Theme.NewsApp，
+            哪怕里面是空的，values/ 里那个 style 的【所有 item 都会被丢掉】
+
+      所以：如果这里再写一个空的 Base.Theme.NewsApp，
+      values/themes.xml 里那 14 行 colorPrimary 之类【就全没了】。
+
+      我们的做法：
+        · 颜色统统交给 colors.xml + values-night/colors.xml（按名字合并，天然安全）
+        · 样式只留一份（values/themes.xml）
+      → 这样最不容易出岔子。
+
+      什么时候才需要在这里写东西？
+        当"深色主题下布局/尺寸也要不一样"的时候 —— 那才是 style 层面的事。
+        颜色不该走到这一步。
+    -->
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ animated-vector —— "会动的矢量图"。
+
+    它自己不会画任何东西，它只是把一张【静态矢量图】
+    （android:drawable 指的那个）和几段【动画】绑在一起。
+
+    每个 <target> 干一件事：
+        name      → 去那张矢量图里找叫这个名字的 group
+        animation → 给它挂上哪段动画
+
+    所以 bar1 找的就是 ic_splash_bars.xml 里 android:name="bar1" 那个 group。
+    名字对不上 → 动画静默失效（不报错，就是不动）。
+-->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_splash_bars">
+
+    <target
+        android:name="bar1"
+        android:animation="@animator/bar_grow_1" />
+
+    <target
+        android:name="bar2"
+        android:animation="@animator/bar_grow_2" />
+
+    <target
+        android:name="bar3"
+        android:animation="@animator/bar_grow_3" />
+
+</animated-vector>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ 同一张插画，夜版配色。
+
+  ★★ 注意：pathData（形状）一个字没改，只换了颜色。
+     "限定符换的是【变体】，不是【重画】" —— 这是最省事的一种变体。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="110dp"
+    android:viewportWidth="180"
+    android:viewportHeight="110">
+
+    <path
+        android:pathData="M8,92 L42,66 L74,78 L108,38 L140,52 L176,14"
+        android:strokeColor="#403D7BF5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="3" />
+
+    <path
+        android:fillColor="#5564B5F6"
+        android:pathData="M42,66 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+    <path
+        android:fillColor="#666990FB"
+        android:pathData="M108,38 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+    <path
+        android:fillColor="#5564B5F6"
+        android:pathData="M150,26 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+
+</vector>

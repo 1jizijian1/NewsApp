@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+      ★ 四个按钮 + 那个大标题，缩成了这一个下拉框。
+
+      ★★ 这里面有两个控件在配合，缺一不可：
+         TextInputLayout           —— 那圈边框 + 提示文字 + 右边的小箭头
+         MaterialAutoCompleteTextView —— 真正承接数据和点击的输入框
+
+      ★★ 关键在 style 里那个 ...ExposedDropdownMenu ——
+         是它把"一个普通输入框"变成"只能选、不能打字"的下拉框。
+    -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="14dp"
+        android:hint="选择榜单">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/categoryDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/repoList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1" />
+
+    <!-- ★ 底部说明。每一个字都和代码的行为对得上：数据源 / 排序依据 / 更新时机 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="数据来自 GitHub · 按 star 数排序 · 每次打开实时更新"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textSize="11sp"
+        tools:ignore="MissingTranslation" />
+
+</LinearLayout>

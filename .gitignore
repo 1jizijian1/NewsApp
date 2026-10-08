@@ -1,0 +1,16 @@
+# ---- Android / Gradle ----
+*.iml
+.gradle
+/build
+/app/build
+local.properties
+.externalNativeBuild
+.cxx
+captures/
+
+# ---- IDE 本地配置（别人 clone 下来不需要，Android Studio 会自己生成）----
+.idea/
+.DS_Store
+
+# ---- 调试用的截图，不传 ----
+/*.jpg

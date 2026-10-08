@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ 现在整页就两层：
+
+     第一层：一层"变暗的遮罩"（panelBackdrop）—— 点它关闭
+     第二层：中间的圆角面板（panel）—— 里面装原来的全部内容
+
+  ★★ 为什么面板高度写 match_parent（而不是 wrap_content）？
+     因为 wrap_content 遇到"内容比屏幕长"时会直接顶出屏幕外面，
+     而 ScrollView 又需要一个确定的高度才会去滚。
+     写成"铺满减去四周的 margin"，高度就永远确定 —— 内容长了它自己滚。
+
+  ★ 四周那些 margin（18dp 横、48dp 竖）就是"居中面板"的全部秘密 ——
+    留出这一圈缝，后面的列表才露得出来，才有"浮在上面"的感觉。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/panelBackdrop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/panel_scrim">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginVertical="48dp"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="8dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <TextView
+                    android:id="@+id/detailName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:lineSpacingMultiplier="1.3"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="16sp" />
+
+                <!-- 结构化信息卡片（全是事实，不用翻译） -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/detailMeta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="1.5"
+                        android:padding="14dp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/detailUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnOpenUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="在浏览器中打开" />
+
+                <TextView
+                    android:id="@+id/detailReadme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

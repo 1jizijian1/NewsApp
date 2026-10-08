@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ 首頁右上角的装饰插画（白天版）
+    一条上升的折线 + 几个光点 —— 纯 XML，零素材。
+
+  ★ 圆怎么画：一条 path 里写两个半圆弧
+        M40,40 m-4,0   → 笔尖移到 (40,40)，再往左 4（到圆的左端）
+        a4,4 0 1,0 8,0 → 画上半圆到右端
+        a4,4 0 1,0 -8,0→ 画下半圆回到左端
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="110dp"
+    android:viewportWidth="180"
+    android:viewportHeight="110">
+
+    <!-- 上升的折线 -->
+    <path
+        android:pathData="M8,92 L42,66 L74,78 L108,38 L140,52 L176,14"
+        android:strokeColor="#40FF9B3C"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="3" />
+
+    <!-- 折线上的几个光点 -->
+    <path
+        android:fillColor="#55FFB74D"
+        android:pathData="M42,66 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+    <path
+        android:fillColor="#66FF9B3C"
+        android:pathData="M108,38 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+    <path
+        android:fillColor="#55FFB74D"
+        android:pathData="M150,26 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+
+</vector>

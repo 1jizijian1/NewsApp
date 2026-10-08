@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      ★ Material 3 的【角色色】—— 浅色主题版
+
+      命名规则：md_theme_<角色>
+      这些名字是 M3 的约定，和主题里的属性一一对应：
+          md_theme_primary   ←→   <item name="colorPrimary">
+
+      ★★ 注意：values-night/colors.xml 里用的是【一模一样的名字】。
+         颜色是"按名字合并"的资源 —— 夜版目录里没写的会自动回落，
+         写了同名的就覆盖。
+         所以 themes.xml 里只写一份 @color/md_theme_primary 就够了，
+         明暗切换是【资源系统】替你做的，不是代码。
+    -->
+
+    <!-- 主色：深一点，才压得住白字 -->
+    <color name="md_theme_primary">#1B5FC1</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#D8E2FF</color>
+    <color name="md_theme_onPrimaryContainer">#001A41</color>
+
+    <!-- 次要色：低饱和的灰蓝，用来做"安静"的地方 -->
+    <color name="md_theme_secondary">#565E71</color>
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+    <color name="md_theme_secondaryContainer">#DAE2F9</color>
+    <color name="md_theme_onSecondaryContainer">#131C2B</color>
+
+    <!-- 表面：卡片、页面底 -->
+    <color name="md_theme_surface">#FBF8FF</color>
+    <color name="md_theme_onSurface">#1A1B21</color>
+    <color name="md_theme_surfaceVariant">#E1E2EC</color>
+    <color name="md_theme_onSurfaceVariant">#44474F</color>
+
+    <!-- 轮廓：分隔线、描边 -->
+    <color name="md_theme_outline">#74777F</color>
+    <color name="md_theme_outlineVariant">#C4C6D0</color>
+
+    <!-- ★ 星数专用色：白天用深金 -->
+    <color name="star">#E8A317</color>
+
+    <color name="rank_gold">#C9A227</color>
+    <color name="rank_silver">#8E8E93</color>
+    <color name="rank_bronze">#A9714B</color>
+    <!-- 普通名次的数字颜色（和次要文字一个色） -->
+    <color name="rank_normal">#44474F</color>
+
+    <!-- ★ 启动画面的底色：深蓝，白柱子压上去对比才够 -->
+    <color name="splash_bg">#0F3E8A</color>
+
+    <!-- ★ 详情面板背后那层"变暗的遮罩"。半透明黑，明暗主题都用它 -->
+    <color name="panel_scrim">#A6000000</color>
+
+</resources>

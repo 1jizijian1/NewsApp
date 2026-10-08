@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ objectAnimator 在这里动的不是"图片"，是 vector 里那个 group 的
+    【属性】—— 具体说是 scaleY（纵向缩放）。
+
+    valueFrom=0  →  柱子高度为 0（看不见）
+    valueTo=1    →  恢复到原本的高度
+
+    startOffset 让三根柱子【依次】升起，而不是一起冒出来。
+-->
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="400"
+    android:interpolator="@android:interpolator/decelerate_quad"
+    android:propertyName="scaleY"
+    android:startOffset="0"
+    android:valueFrom="0"
+    android:valueTo="1" />

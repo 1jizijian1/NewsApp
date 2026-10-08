@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  三根柱子的总时长 = startOffset(300) + duration(400) = 700ms。
+  这个数字要和主题里的 windowSplashScreenAnimationDuration 对得上 ——
+  不然系统会在动画播到一半时把画面切走。
+-->
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="400"
+    android:interpolator="@android:interpolator/decelerate_quad"
+    android:propertyName="scaleY"
+    android:startOffset="300"
+    android:valueFrom="0"
+    android:valueTo="1" />

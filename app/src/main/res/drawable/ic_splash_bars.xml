@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ 纯 XML 画出来的矢量图 —— 三个柱子（排行榜），从矮到高。
+    没有任何 .png / .jpg，所以任何屏幕、任何分辨率都不糊。
+
+  ★ viewport 108 x 108 是 Android 12 启动图标的【规定画布】。
+    但系统会把它裁成一个圆 —— 所以内容必须放在中间那个
+    【66dp 的安全圆】里（也就是 21 ~ 87 这一块）。
+    超出安全区的东西，在某些机型上会被裁掉。
+
+  ★ 三个 group 各自有一个名字（bar1 / bar2 / bar3）——
+    待会儿动画要靠这些名字找到它们。
+
+  ★ pivotY="78" = 柱子的底线。做 scaleY 缩放时，
+    是以这条线为支点往上长，而不是从中心往两头长。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:name="bar1"
+        android:pivotY="78">
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M32,56 h10 v22 h-10 Z" />
+    </group>
+
+    <group
+        android:name="bar2"
+        android:pivotY="78">
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M49,44 h10 v34 h-10 Z" />
+    </group>
+
+    <group
+        android:name="bar3"
+        android:pivotY="78">
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M66,32 h10 v46 h-10 Z" />
+    </group>
+
+</vector>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ★ 首页背景：一层垂直渐变（白天版）
+
+  ★★ 关键：res/drawable-night/home_bg.xml 里有【同名】的一份，
+     系统会按当前主题自动挑 —— 和 colors.xml / layout 是同一个机制。
+
+     于是出现了第三种限定符：
+
+        layout/       vs layout-sw600dp/   按【最小宽度】挑
+        values/       vs values-night/     按【白天黑夜】挑（颜色）
+        drawable/     vs drawable-night/   按【白天黑夜】挑（图片）
+        drawable/     vs drawable-xxhdpi/  按【屏幕密度】挑（你第 4 章学的）
+
+     一个名字，多个变体，系统挑 —— 规则完全一样。
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:endColor="#FFFFFF"
+        android:startColor="#FFF1D6"
+        android:type="linear" />
+</shape>
